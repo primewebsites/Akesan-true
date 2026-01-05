@@ -1,0 +1,736 @@
+/* ==================================================
+   RESET E BASE
+================================================== */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #ffffff;
+    color: #1a1a1a;
+    line-height: 1.6;
+}
+
+/* ==================================================
+   VARIÁVEIS
+================================================== */
+:root {
+    --blue-dark: #0b2d4d;
+    --blue-main: #0d6efd;
+    --blue-soft: #e9f1f8;
+
+    --gray-light: #f4f4f4;
+    --gray-medium: #6c757d;
+    --gray-dark: #1a1a1a;
+
+    --white: #ffffff;
+
+    --radius: 12px;
+}
+
+/* ==================================================
+   ELEMENTOS GLOBAIS
+================================================== */
+img {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+/* ==================================================
+   NAV
+================================================== */
+.nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background: rgba(10, 31, 51, 0.75);
+    backdrop-filter: blur(8px);
+}
+
+.nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 70px;
+}
+
+/* Logo */
+.logo {
+    font-size: 1.4rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.logo-ak {
+    color: var(--white);
+}
+
+.logo-san {
+    color: var(--blue-main);
+}
+
+/* Menu */
+.nav-menu {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-menu a {
+    color: #dce6f1;
+    font-size: 0.95rem;
+    transition: color 0.2s ease;
+}
+
+.nav-menu a:hover {
+    color: var(--white);
+}
+
+/* CTA Nav */
+.nav-cta {
+    padding: 0.55rem 1.4rem;
+    background-color: var(--blue-main);
+    color: var(--white);
+    border-radius: 30px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.nav-cta:hover {
+    background-color: #0957c3;
+    transform: translateY(-1px);
+}
+
+/* ==================================================
+   HERO / BANNER
+================================================== */
+.hero {
+    position: relative;
+    min-height: 100vh;
+
+    background-image: url("img/banner-akesan.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    display: flex;
+    align-items: center;
+    color: var(--white);
+}
+
+/* Overlay para leitura */
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    z-index: 1;
+}
+
+/* Conteúdo */
+.hero-container {
+    position: relative;
+    z-index: 2;
+    padding-top: 80px; /* espaço para a nav fixa */
+}
+
+.hero-content {
+    max-width: 600px;
+}
+
+.hero-content h1 {
+    font-size: clamp(2.2rem, 4vw, 3.2rem);
+    font-weight: 600;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+}
+
+.hero-content p {
+    font-size: 1.1rem;
+    color: #e3e3e3;
+}
+
+/* ==================================================
+   SOBRE
+================================================== */
+.about {
+    background-color: var(--gray-light);
+    padding: 5rem 0;
+}
+
+.section-header {
+    margin-bottom: 2.5rem;
+}
+
+.section-header h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--blue-dark);
+}
+
+.about-content {
+    max-width: 800px;
+}
+
+.about-content p {
+    font-size: 1.05rem;
+    margin-bottom: 1.2rem;
+}
+
+/* ==================================================
+   SERVIÇOS
+================================================== */
+.services {
+    padding: 5rem 0;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2rem;
+}
+
+.service-card {
+    background-color: var(--gray-light);
+    padding: 2rem;
+    border-radius: var(--radius);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+
+.service-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+}
+
+.service-card h3 {
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin-bottom: 0.8rem;
+    color: var(--blue-dark);
+}
+
+.service-card p {
+    font-size: 0.95rem;
+    color: var(--gray-medium);
+    margin-bottom: 1.2rem;
+}
+/* ==================================================
+   TÍTULO DA SEÇÃO - NOSSOS SERVIÇOS
+================================================== */
+.section-header {
+    text-align: center;
+    margin-bottom: 3.5rem;
+}
+
+.section-title {
+    position: relative;
+    display: inline-block;
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--blue-dark);
+    padding: 0 1.5rem;
+    letter-spacing: 1px;
+}
+
+.section-title::before,
+.section-title::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 70px;
+    height: 2px;
+    background-color: var(--blue-main);
+}
+
+.section-title::before {
+    left: -80px;
+}
+
+.section-title::after {
+    right: -80px;
+}
+
+/* ==================================================
+   BOTÃO WHATSAPP - SERVIÇOS
+================================================== */
+.service-whatsapp {
+    display: inline-block;
+    padding: 0.6rem 1.4rem;
+    border-radius: 30px;
+    background-color: var(--blue-main);
+    color: #ffffff;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.25s ease;
+    
+    margin-top: auto;
+}
+
+
+
+.service-whatsapp:hover {
+    background-color: #0a58ca;
+    transform: translateY(-2px);
+}
+
+/* ==================================================
+   TÍTULO CENTRALIZADO COM LINHAS
+================================================== */
+.section-header.center {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.section-title {
+    position: relative;
+    display: inline-block;
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--blue-dark);
+    padding: 0 1.5rem;
+}
+
+.section-title::before,
+.section-title::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 60px;
+    height: 2px;
+    background-color: var(--blue-main);
+}
+
+.section-title::before {
+    left: -70px;
+}
+
+.section-title::after {
+    right: -70px;
+}
+
+/* ==================================================
+   DIFERENCIAIS AKESAN
+================================================== */
+.diferenciais {
+    background: linear-gradient(135deg, #0a1f44, #0d2d6c);
+    padding: 6rem 0;
+    color: #ffffff;
+}
+
+.diferenciais-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+/* TEXTO PRINCIPAL */
+.diferenciais-text h2 {
+    font-size: 2.2rem;
+    font-weight: 600;
+    margin-bottom: 1.2rem;
+}
+
+.diferenciais-text p {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.85);
+    max-width: 520px;
+}
+
+/* GRID DE DIFERENCIAIS */
+.diferenciais-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+/* CARD */
+.diferencial-item {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(6px);
+    padding: 2rem;
+    border-radius: 16px;
+    transition: transform 0.25s ease, background-color 0.25s ease;
+}
+
+.diferencial-item:hover {
+    transform: translateY(-6px);
+    background: rgba(255, 255, 255, 0.12);
+}
+
+/* ÍCONE */
+.diferencial-item .icon {
+    font-size: 2rem;
+    display: block;
+    margin-bottom: 0.8rem;
+}
+
+/* TÍTULO */
+.diferencial-item h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #ffffff;
+}
+
+/* TEXTO */
+.diferencial-item p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.85);
+}
+
+/* ==================================================
+   RESPONSIVO
+================================================== */
+@media (max-width: 900px) {
+    .diferenciais-container {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+        text-align: center;
+    }
+
+    .diferenciais-text p {
+        margin: 0 auto;
+    }
+
+    .diferenciais-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* ==================================================
+   CTA FINAL
+================================================== */
+.final-cta {
+    background-color: var(--blue-main);
+    color: var(--white);
+    padding: 4rem 0;
+    text-align: center;
+}
+
+.final-cta h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+}
+
+.cta-button {
+    padding: 0.9rem 2.4rem;
+    background-color: var(--white);
+    color: var(--blue-main);
+    font-weight: 600;
+    border-radius: 50px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.15);
+}
+
+/* ==================================================
+   CLIENTES
+================================================== */
+
+.clients {
+    padding: 4rem 0;
+    background-color: var(--gray-light);
+    overflow: hidden;
+}
+
+.clients .section-header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+.clients-marquee {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.clients-track {
+    display: flex;
+    width: max-content;
+    animation: scroll-clients 30s linear infinite;
+}
+
+.client-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 180px;
+    padding: 0 2rem;
+}
+
+.client-logo img {
+    max-width: 120px;
+    max-height: 60px;
+    opacity: 0.7;
+    filter: grayscale(100%);
+    transition: opacity 0.3s ease, filter 0.3s ease, transform 0.3s ease;
+}
+
+.client-logo img:hover {
+    opacity: 1;
+    filter: grayscale(0%);
+    transform: scale(1.05);
+}
+
+/* Animação contínua */
+@keyframes scroll-clients {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+/* Pausa no hover (opcional, elegante) */
+.clients-marquee:hover .clients-track {
+    animation-play-state: paused;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .client-logo {
+        min-width: 140px;
+        padding: 0 1.2rem;
+    }
+
+    .client-logo img {
+        max-width: 100px;
+    }
+}
+
+
+
+/* ==================================================
+   FOOTER
+================================================== */
+.footer {
+    background-color: #0a1f33;
+    color: #cfd8e3;
+    padding: 2.5rem 0;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* ==================================================
+   RESPONSIVO (DESKTOP)
+================================================== */
+@media (min-width: 900px) {
+
+    .nav-menu {
+        display: flex;
+    }
+
+    .footer-content {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+/* ==================================================
+   FOOTER
+================================================== */
+.footer {
+    background-color: #0a1f44;
+    color: rgba(255, 255, 255, 0.85);
+    padding-top: 3rem;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    padding-bottom: 2rem;
+}
+
+/* MARCA */
+.footer-brand h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 0.6rem;
+}
+
+.footer-brand h3 span {
+    color: var(--blue-main);
+}
+
+.footer-brand p {
+    font-size: 0.9rem;
+    max-width: 360px;
+    line-height: 1.6;
+}
+
+/* ÍCONES SOCIAIS */
+.footer-social {
+    display: flex;
+    gap: 1rem;
+}
+
+.footer-social a {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    font-size: 0.95rem;
+    transition: all 0.25s ease;
+}
+
+.footer-social a:hover {
+    background: var(--blue-main);
+    transform: translateY(-3px);
+}
+
+/* LINHA FINAL */
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 1rem 0;
+    text-align: center;
+}
+
+.footer-bottom p {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.6);
+}
+/* BOTÃO BURGER */
+.nav-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.nav-toggle span {
+    width: 24px;
+    height: 2px;
+    background-color: #ffffff;
+    transition: all 0.3s ease;
+}
+
+/* ==================================================
+   RESPONSIVO
+================================================== */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-brand p {
+        margin: 0 auto;
+    }
+}
+/* NAV SCROLL */
+.nav-scrolled {
+    background-color: rgba(10, 31, 68, 0.95);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* LINK ATIVO */
+.nav-menu a.active {
+    color: var(--blue-main);
+    font-weight: 600;
+}
+
+/* ANIMAÇÃO REVEAL */
+.reveal {
+    opacity: 0;
+    transform: translateY(25px);
+    transition: all 0.6s ease;
+}
+
+.reveal-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (max-width: 900px) {
+
+    .nav-toggle {
+        display: flex;
+    }
+
+    .nav-menu {
+        position: fixed;
+        top: 70px;
+        right: 0;
+        width: 100%;
+        height: calc(100vh - 70px);
+        background-color: rgba(10, 31, 68, 0.98);
+
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 2rem;
+
+        transform: translateX(100%);
+        transition: transform 0.3s ease;
+    }
+
+    .nav-menu li a {
+        font-size: 1.2rem;
+        color: #ffffff;
+    }
+
+    .nav-menu.active {
+        transform: translateX(0);
+    }
+}
+.nav-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.nav-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.nav-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
